@@ -22,18 +22,18 @@ function FeaturedProperties() {
     },
   ]
 
-
-
   return (
     <section
       className="
         w-full
         overflow-hidden
         bg-white
-        pt-[100px]
-        pb-[90px]
-        sm:pt-[140px]
-        sm:pb-[110px]
+        pt-[70px]
+        pb-[70px]
+        sm:pt-[90px]
+        sm:pb-[80px]
+        md:pt-[100px]
+        md:pb-[90px]
         lg:pt-[80px]
         lg:pb-[0px]
       "
@@ -41,9 +41,10 @@ function FeaturedProperties() {
       <div
         className="
           mx-auto
-          w-[90%]
+          w-[92%]
           max-w-[1320px]
-          sm:w-[88%]
+          sm:w-[90%]
+          md:w-[88%]
           lg:w-[86%]
         "
       >
@@ -54,21 +55,25 @@ function FeaturedProperties() {
             flex-wrap
             items-center
             justify-between
-            gap-y-3
+            gap-x-6
+            gap-y-4
           "
         >
           <div className="flex items-center gap-[10px]">
             <span
               className="
-                h-[16px]
-                w-[16px]
+                h-[14px]
+                w-[14px]
                 shrink-0
                 rounded-full
-                border-[4px]
+                border-[3px]
                 border-[#061632]
                 bg-[#8ec5ef]
-                sm:h-[17px]
-                sm:w-[17px]
+                sm:h-[16px]
+                sm:w-[16px]
+                sm:border-[4px]
+                md:h-[17px]
+                md:w-[17px]
               "
             />
 
@@ -82,7 +87,15 @@ function FeaturedProperties() {
                 sm:text-[13px]
               "
             >
-              <span className="text-[24px]">Featured Properties</span>
+              <span
+                className="
+                  text-[19px]
+                  sm:text-[21px]
+                  md:text-[24px]
+                "
+              >
+                Featured Properties
+              </span>
             </p>
           </div>
 
@@ -92,10 +105,10 @@ function FeaturedProperties() {
               flex
               shrink-0
               items-center
-              gap-[9px]
-              rounded-[9px]
+              gap-[7px]
+              rounded-[8px]
               bg-[#050505]
-              px-[10px]
+              px-[9px]
               py-[6px]
               text-[9px]
               font-medium
@@ -104,9 +117,12 @@ function FeaturedProperties() {
               transition-colors
               duration-200
               hover:bg-[#161616]
-              sm:px-[13px]
+              sm:gap-[8px]
+              sm:rounded-[9px]
+              sm:px-[11px]
               sm:py-[7px]
               sm:text-[10px]
+              md:px-[13px]
             "
           >
             View All Properties
@@ -114,20 +130,23 @@ function FeaturedProperties() {
             <span
               className="
                 flex
-                h-[20px]
-                w-[20px]
+                h-[19px]
+                w-[19px]
                 items-center
                 justify-center
                 rounded-[5px]
                 bg-white
                 text-[#050505]
-                sm:h-[22px]
-                sm:w-[22px]
+                sm:h-[21px]
+                sm:w-[21px]
+                md:h-[22px]
+                md:w-[22px]
               "
             >
               <ArrowUpRight
-                size={11}
+                size={10}
                 strokeWidth={1.8}
+                className="sm:h-[11px] sm:w-[11px]"
               />
             </span>
           </button>
@@ -135,14 +154,19 @@ function FeaturedProperties() {
 
         <div
           className="
-            mt-[32px]
+            mt-[28px]
             grid
             w-full
             grid-cols-1
-            gap-[22px]
+            gap-[20px]
+            sm:mt-[34px]
+            sm:gap-[24px]
+            md:mt-[38px]
+            lg:mt-[42px]
             lg:grid-cols-[1fr_0.6fr]
             lg:items-center
-            lg:gap-[80px]
+            lg:gap-[60px]
+            xl:gap-[80px]
           "
         >
           <div>
@@ -151,12 +175,12 @@ function FeaturedProperties() {
                 max-w-[650px]
                 text-[30px]
                 font-semibold
-                leading-[1.1]
+                leading-[1.08]
                 tracking-[-1px]
                 text-[#05070b]
-                sm:text-[38px]
+                sm:text-[36px]
                 sm:tracking-[-1.2px]
-                md:text-[46px]
+                md:text-[44px]
                 lg:text-[48px]
                 lg:tracking-[-1.5px]
               "
@@ -177,7 +201,6 @@ function FeaturedProperties() {
                 sm:text-[13px]
                 md:text-[14px]
                 lg:text-right
-                font-p
               "
             >
               Discover handpicked properties in prime locations.
@@ -187,19 +210,16 @@ function FeaturedProperties() {
 
         <div
           className="
-            mt-[40px]
+            mt-[34px]
             flex
-            w-[calc(100%+116px)]
-            -translate-x-[58px]
+            w-full
             flex-col
             gap-[16px]
-            sm:mt-[50px]
-            sm:w-[calc(100%+116px)]
-            sm:-translate-x-[58px]
+            sm:mt-[42px]
             sm:gap-[20px]
+            md:mt-[48px]
             lg:mt-[62px]
-            lg:w-[calc(100%+116px)]
-            lg:-translate-x-[58px]
+            lg:gap-[24px]
           "
         >
           {properties.map((property, index) => (
@@ -214,26 +234,22 @@ function FeaturedProperties() {
                 bg-[#e9ecef]
               "
             >
-             <img
-  src={property.image}
-  alt={property.title}
-  className="
-    block
-    h-[calc(55vw+120px)]
-    min-h-[360px]
-    max-h-[680px]
-    w-full
-    object-cover
-    sm:h-[calc(52vw+120px)]
-    sm:min-h-[420px]
-    sm:max-h-[620px]
-    lg:h-[calc(38vw+120px)]
-    lg:min-h-[540px]
-    lg:max-h-[680px]
-    xl:h-[calc(36vw+120px)]
-    xl:max-h-[720px]
-  "
-/>
+              <img
+                src={property.image}
+                alt={property.title}
+                className="
+                  block
+                  h-[430px]
+                  w-full
+                  object-cover
+                  object-center
+                  sm:h-[480px]
+                  md:h-[540px]
+                  lg:h-[600px]
+                  xl:h-[680px]
+                  2xl:h-[720px]
+                "
+              />
 
               <div
                 className="
@@ -251,35 +267,42 @@ function FeaturedProperties() {
                   left-1/2
                   top-1/2
                   z-10
-                  w-[220px]
+                  w-[calc(100%-32px)]
+                  max-w-[300px]
                   -translate-x-1/2
                   -translate-y-1/2
-                  sm:w-[280px]
-                  md:w-[300px]
+                  sm:w-[180px]
+                  sm:max-w-none
+                  md:w-[190px]
                   lg:w-[340px]
                 "
               >
                 <div
                   className="
-                    rounded-[14px]
+                    rounded-[12px]
                     bg-black/[0.55]
-                    px-[88px]
-                    py-[86px]
+                    px-[24px]
+                    py-[30px]
                     text-center
                     backdrop-blur-[2px]
-                    sm:px-[83px]
-                    sm:py-[50px]
+                    sm:rounded-[14px]
+                    sm:px-[35px]
+                    sm:py-[38px]
+                    md:px-[45px]
+                    md:py-[42px]
+                    lg:px-[50px]
+                    lg:py-[46px]
                   "
                 >
                   <h3
                     className="
-                      text-[15px]
-                      
+                      text-[22px]
+                      font-normal
                       leading-[1.15]
-                      tracking-[-0.2px]
+                      tracking-[-0.3px]
                       text-white
-                      sm:text-[38px]
-                      lg:text-[30px]
+                      sm:text-[18px]
+                      md:text-[30px]
                     "
                   >
                     {property.title}
@@ -287,52 +310,58 @@ function FeaturedProperties() {
 
                   <p
                     className="
-                      mt-[4px]
-                      text-[9px]
+                      mt-[8px]
+                      text-[11px]
                       font-normal
-                      leading-[1.3]
-                      tracking-[0.03em]
+                      leading-[1.4]
+                      tracking-[0.02em]
                       text-white/85
-                      sm:text-[18px]
-                      leading-8
+                      sm:mt-[9px]
+                      sm:text-[14px]
+                      md:text-[16px]
                     "
                   >
-                    <span className="mr-[4px]  text-[#ff4f4f] leading-8 ">●</span>
+                    <span className="mr-[4px] text-[#ff4f4f]">
+                      ●
+                    </span>
                     {property.location}
                   </p>
 
                   <p
                     className="
                       mt-[12px]
-                      text-[13px]
+                      text-[12px]
                       font-semibold
-                      leading-none
+                      leading-[1.3]
                       tracking-[-0.2px]
                       text-white
+                      sm:mt-[14px]
                       sm:text-[14px]
-                      leading-8
+                      md:text-[15px]
                     "
                   >
-                    <span className="leading-8">{property.price}</span>
+                    {property.price}
                   </p>
 
                   <div
                     className="
                       mx-auto
-                      mt-[14px]
+                      mt-[16px]
                       flex
                       w-fit
                       items-center
-                      gap-[8px]
+                      gap-[7px]
                       rounded-[7px]
                       bg-white
                       px-[12px]
-                      py-[6px]
-                      text-[19px]
+                      py-[7px]
+                      text-[12px]
                       font-medium
                       text-[#050505]
-                      sm:text-[15px]
-                    
+                      sm:mt-[18px]
+                      sm:px-[14px]
+                      sm:py-[8px]
+                      sm:text-[13px]
                     "
                   >
                     Explore
@@ -347,6 +376,8 @@ function FeaturedProperties() {
                         rounded-[4px]
                         bg-[#050505]
                         text-white
+                        sm:h-[19px]
+                        sm:w-[19px]
                       "
                     >
                       <ArrowUpRight
