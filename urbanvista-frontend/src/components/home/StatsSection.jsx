@@ -18,6 +18,8 @@ function StatsSection() {
     },
   ]
 
+ 
+
   return (
     <section
       className="
@@ -136,7 +138,7 @@ function StatsSection() {
                   tracking-[-0.15px]
                   text-[#303030]
                   sm:text-[14px]
-                  lg:text-[15px]
+                  lg:text-[17px]
                 "
               >
                 {stat.label}

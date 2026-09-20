@@ -37,6 +37,8 @@ function Testimonials() {
     },
   ]
 
+  
+
   return (
     <section
       className="
@@ -47,7 +49,7 @@ function Testimonials() {
         pb-[120px]
         sm:pt-[5px]
         sm:pb-[0px]
-        lg:pt-[0px]
+        lg:pt-[70px]
         lg:pb-[50px]
       "
     >
@@ -219,7 +221,7 @@ function TestimonialCard({ testimonial }) {
             tracking-[-0.05px]
             text-[#4c4c4c]
             sm:text-[12px]
-            lg:text-[13px]
+            lg:text-[17px]
           "
         >
           {testimonial.message}
@@ -266,7 +268,8 @@ function TestimonialCard({ testimonial }) {
               leading-none
               tracking-[-0.15px]
               text-[#111111]
-              sm:text-[14px]
+              sm:text-[24px]
+              lg:text-[19px]
             "
           >
             {testimonial.name}
@@ -279,7 +282,7 @@ function TestimonialCard({ testimonial }) {
               font-normal
               leading-none
               text-[#777777]
-              sm:text-[10px]
+              sm:text-[14px]
             "
           >
             {testimonial.role}

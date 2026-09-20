@@ -22,6 +22,8 @@ function FeaturedProperties() {
     },
   ]
 
+
+
   return (
     <section
       className="
@@ -175,6 +177,7 @@ function FeaturedProperties() {
                 sm:text-[13px]
                 md:text-[14px]
                 lg:text-right
+                font-p
               "
             >
               Discover handpicked properties in prime locations.
@@ -253,30 +256,30 @@ function FeaturedProperties() {
                   -translate-y-1/2
                   sm:w-[280px]
                   md:w-[300px]
-                  lg:w-[330px]
+                  lg:w-[340px]
                 "
               >
                 <div
                   className="
                     rounded-[14px]
                     bg-black/[0.55]
-                    px-[18px]
-                    py-[16px]
+                    px-[88px]
+                    py-[86px]
                     text-center
                     backdrop-blur-[2px]
-                    sm:px-[26px]
-                    sm:py-[20px]
+                    sm:px-[83px]
+                    sm:py-[50px]
                   "
                 >
                   <h3
                     className="
                       text-[15px]
-                      font-medium
+                      
                       leading-[1.15]
                       tracking-[-0.2px]
                       text-white
-                      sm:text-[18px]
-                      lg:text-[20px]
+                      sm:text-[38px]
+                      lg:text-[30px]
                     "
                   >
                     {property.title}
@@ -290,10 +293,11 @@ function FeaturedProperties() {
                       leading-[1.3]
                       tracking-[0.03em]
                       text-white/85
-                      sm:text-[10px]
+                      sm:text-[18px]
+                      leading-8
                     "
                   >
-                    <span className="mr-[4px] text-[#ff4f4f]">●</span>
+                    <span className="mr-[4px]  text-[#ff4f4f] leading-8 ">●</span>
                     {property.location}
                   </p>
 
@@ -305,10 +309,11 @@ function FeaturedProperties() {
                       leading-none
                       tracking-[-0.2px]
                       text-white
-                      sm:text-[16px]
+                      sm:text-[14px]
+                      leading-8
                     "
                   >
-                    {property.price}
+                    <span className="leading-8">{property.price}</span>
                   </p>
 
                   <div
@@ -323,10 +328,11 @@ function FeaturedProperties() {
                       bg-white
                       px-[12px]
                       py-[6px]
-                      text-[9px]
+                      text-[19px]
                       font-medium
                       text-[#050505]
-                      sm:text-[10px]
+                      sm:text-[15px]
+                    
                     "
                   >
                     Explore

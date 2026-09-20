@@ -7,28 +7,28 @@ function Services() {
 
   const services = [
     {
-      number: '01',
+      
       title: 'Buy a Property',
       description:
         'Find your dream home from our wide range of verified properties.',
       image: '/property-1.png',
     },
     {
-      number: '02',
+     
       title: 'Rent a Property',
       description:
         'Find comfortable apartments, homes, and commercial spaces in your preferred location.',
       image: '/property-2.png',
     },
     {
-      number: '03',
+      
       title: 'Invest in Real Estate',
       description:
         'Discover valuable real estate investment opportunities in prime locations.',
       image: '/property-3.png',
     },
     {
-      number: '04',
+      
       title: 'Sell Your Property',
       description:
         'Sell your property faster with our trusted real estate network.',
@@ -74,7 +74,10 @@ function Services() {
     })
   }
 
+
+
   return (
+    
     <section
       className="
         w-full
@@ -146,6 +149,7 @@ function Services() {
                 text-[#05070b]
                 sm:text-[46px]
                 lg:text-[48px]
+                
               "
             >
               Everything You Need to Find
@@ -173,6 +177,7 @@ function Services() {
                 tracking-[-0.1px]
                 text-[#444444]
                 lg:text-right
+                font-p
               "
             >
               Whether you&apos;re buying your first home, investing in property,
@@ -279,7 +284,7 @@ function Services() {
                 {service.number}
               </span>
 
-              <span
+              {/* <span
                 className="
                   absolute
                   right-[20px]
@@ -297,7 +302,7 @@ function Services() {
                 "
               >
                 ↗
-              </span>
+              </span> */}
 
               <div
                 ref={(element) => {
@@ -318,7 +323,7 @@ function Services() {
                   className="
                     mb-[8px]
                     max-w-[280px]
-                    text-[12px]
+                    text-[15px]
                     font-normal
                     leading-[1.45]
                     tracking-[-0.05px]
@@ -330,7 +335,7 @@ function Services() {
 
                 <h3
                   className="
-                    text-[18px]
+                    text-[20px]
                     font-semibold
                     leading-[1.1]
                     tracking-[-0.35px]

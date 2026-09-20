@@ -81,6 +81,7 @@ function FooterSection() {
                   sm:text-[29px]
 
                   lg:text-[31px]
+                  font-goldman
                 "
               >
                 UrbanVista
@@ -103,6 +104,7 @@ function FooterSection() {
                   sm:text-[12px]
 
                   lg:text-[13px]
+                  font-h4
                 "
               >
                 Find, explore, and choose your next home
@@ -253,6 +255,7 @@ function FooterSection() {
                   text-white
 
                   sm:text-[15px]
+                  font-h4
                 "
               >
                 Explore
@@ -283,6 +286,7 @@ function FooterSection() {
                     hover:text-white
 
                     sm:text-[12px]
+                    font-h4
                   "
                 >
                   Properties
@@ -302,6 +306,7 @@ function FooterSection() {
                     hover:text-white
 
                     sm:text-[12px]
+                    font-h4
                   "
                 >
                   Services
@@ -321,6 +326,7 @@ function FooterSection() {
                     hover:text-white
 
                     sm:text-[12px]
+                    font-h4
                   "
                 >
                   About
@@ -340,6 +346,7 @@ function FooterSection() {
                     hover:text-white
 
                     sm:text-[12px]
+                    font-h4
                   "
                 >
                   Contact Us
@@ -362,6 +369,7 @@ function FooterSection() {
                   text-white
 
                   sm:text-[15px]
+                  font-h4
                 "
               >
                 Contact
@@ -376,6 +384,7 @@ function FooterSection() {
                   flex
                   flex-col
                   gap-[19px]
+                  font-h4
                 "
               >
                 {/* EMAIL */}
@@ -402,6 +411,7 @@ function FooterSection() {
 
                       text-[11px]
                       text-[#00131e]
+                      font-h4
                     "
                   >
                     @
@@ -416,6 +426,7 @@ function FooterSection() {
                       text-white/85
 
                       sm:text-[12px]
+                      font-h4
                     "
                   >
                     myhome@mail.com
@@ -460,6 +471,7 @@ function FooterSection() {
                       text-white/85
 
                       sm:text-[12px]
+                      font-h4
                     "
                   >
                     +123 456 000
@@ -504,6 +516,7 @@ function FooterSection() {
                       text-white/85
 
                       sm:text-[12px]
+                      font-h4
                     "
                   >
                     New York, USA
@@ -547,6 +560,7 @@ function FooterSection() {
                 text-white/60
 
                 sm:text-[11px]
+                font-h4
               "
             >
               Copyright@2026
@@ -562,6 +576,7 @@ function FooterSection() {
                 text-white/60
 
                 sm:text-[11px]
+                font-h4
               "
             >
               Alive on LiveOS.ai
@@ -583,6 +598,7 @@ function FooterSection() {
                 hover:text-white
 
                 sm:text-[11px]
+                font-h4
               "
             >
               Privacy Policy

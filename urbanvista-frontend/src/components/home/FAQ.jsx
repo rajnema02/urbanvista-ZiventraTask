@@ -41,6 +41,18 @@ function FAQ() {
     },
   ]
 
+  {questions.map((item, index) => (
+  <div key={index}>
+    <h3 className="text-[18px] font-semibold leading-[1.3] sm:text-[20px] lg:text-[22px]">
+      {item.question}
+    </h3>
+
+    <p className="mt-[10px] text-[13px] font-normal leading-[1.5] sm:text-[14px] lg:text-[16px]">
+      {item.answer}
+    </p>
+  </div>
+))}
+
   const handleToggle = (index) => {
     setOpenIndex((current) =>
       current === index ? -1 : index
@@ -223,7 +235,7 @@ function FAQ() {
                           tracking-[-0.1px]
                           text-[#111111]
                           sm:text-[13px]
-                          lg:text-[14px]
+                          lg:text-[18px]
                         "
                       >
                         {item.question}
@@ -239,7 +251,7 @@ function FAQ() {
                           shrink-0
                           items-center
                           justify-center
-                          text-[18px]
+                          text-[25px]
                           font-normal
                           leading-none
                           text-[#111111]
@@ -267,13 +279,16 @@ function FAQ() {
                         <p
                           className="
                             max-w-[650px]
-                            text-[10px]
+                            text-[20px]
+                            
+                          tracking-[0.3px]
                             font-normal
                             leading-[1.55]
-                            tracking-[-0.05px]
+                            
                             text-[#617080]
                             sm:text-[11px]
-                            lg:text-[12px]
+                            lg:text-[14px]
+                            
                           "
                         >
                           {item.answer}

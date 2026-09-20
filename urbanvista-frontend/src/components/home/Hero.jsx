@@ -10,24 +10,26 @@ function Hero() {
     const animations = []
 
     fogs.forEach((fog, index) => {
-      const animation = gsap.fromTo(
-        fog,
-        {
-          y: '8%',
-          x: index % 2 === 0 ? '-3%' : '3%',
-          scale: 1,
-          opacity: 0.65,
-        },
-        {
-          y: '-28%',
-          x: index % 2 === 0 ? '5%' : '-5%',
-          scale: 1.08,
-          opacity: 0.9,
-          duration: 7 + index * 1.5,
-          ease: 'none',
-          repeat: -1,
-          delay: index * 1.5,
-        }
+      
+        const animation = gsap.fromTo(
+  fog,
+  {
+    y: '8%',
+    x: index % 2 === 0 ? '-3%' : '3%',
+    scale: 1,
+    opacity: 0.65,
+  },
+  {
+    y: '-28%',
+    x: index % 2 === 0 ? '5%' : '-5%',
+    scale: 1.08,
+    opacity: 0.9,
+    duration: 7 + index * 1.5,
+    ease: 'none',
+    repeat: -1,
+    delay: index * 1.5,
+  }
+
       )
 
       animations.push(animation)
@@ -47,8 +49,7 @@ function Hero() {
         overflow-hidden
         aspect-[3/2]
         min-h-[560px]
-        sm:min-h-[620px]
-        lg:min-h-[700px]
+        sm:min-h-[600px]
       "
     >
       {/* ========================= */}
@@ -72,65 +73,63 @@ function Hero() {
       <div className="absolute inset-0 bg-black/[0.03]" />
 
       {/* ========================= */}
+      {/* NAVBAR IS OUTSIDE HERO */}
+      {/* ========================= */}
+
+      {/* ========================= */}
       {/* HERO CONTENT */}
       {/* ========================= */}
 
-      <div
+      <div 
         className="
           absolute
           left-4
-          right-4
           top-[54%]
           z-10
-          max-w-[420px]
-          rounded-[16px]
-          bg-[#9fc9ec]/90
-          p-5
-          shadow-lg
-          backdrop-blur-[4px]
-          border
-          border-white/20
+          w-[calc(100%-7rem)]
+          max-w-[520px]
+          rounded-[14px]
+          bg-[#9fc9ec]/85
+          p-4
+          shadow-sm
+          backdrop-blur-[2px]
 
           sm:left-[6%]
-          sm:right-auto
-          sm:top-[52%]
-          sm:w-[380px]
+          sm:top-[55%]
+          sm:w-[360px]
           sm:max-w-none
-          sm:p-6
-          sm:rounded-[18px]
+          sm:p-5
 
           md:left-[7%]
-          md:w-[410px]
-          md:p-7
-          md:rounded-[20px]
+          md:w-[390px]
+          md:p-6
 
           lg:left-[6%]
-          lg:top-[28%]
-          lg:w-[520px]
-          lg:p-8
-          lg:rounded-[24px]
-          lg:shadow-2xl
+          lg:top-[19%]
+          lg:w-[500px]
+          lg:p-7
         "
+
+        
       >
         {/* Heading */}
         <h1
           className="
             text-[24px]
             font-bold
-            leading-[1.15]
-            tracking-[-0.6px]
+            leading-[1.12]
+            tracking-[-0.5px]
             text-[#061632]
 
-            sm:text-[32px]
-            sm:leading-[1.12]
 
-            md:text-[36px]
+            sm:text-[30px]
 
-            lg:text-[44px]
-            lg:leading-[1.1]
+            md:text-[34px]
+
+            lg:text-[42px]
           "
         >
-          Find a Place You'll
+          Find a Place You’ll
           <br />
           Love to Call Home
         </h1>
@@ -138,66 +137,57 @@ function Hero() {
         {/* Description */}
         <p
           className="
-            mt-4
-            max-w-full
-            text-[10px]
-            leading-[1.6]
+            mt-3
+            max-w-[290px]
+            text-[9px]
+            leading-[1.5]
             text-[#26374d]
 
-            sm:max-w-[310px]
-            sm:text-[11px]
-            sm:mt-5
+            sm:text-[10px]
 
-            md:text-[12px]
-            md:mt-5
+            md:text-[11px]
 
-            lg:max-w-[430px]
-            lg:text-[13px]
-            lg:mt-6
+            lg:max-w-[390px]
+            lg:text-[12px]
+            font-p
           "
+          
         >
-          Discover properties that match your lifestyle, budget, and future goals. From modern apartments to luxury villas, your perfect property is just a few clicks away.
+          Discover properties that match your lifestyle,
+          budget, and future goals. From modern apartments
+          to luxury villas, your perfect property is just a
+          few clicks away.
         </p>
 
         {/* Buttons */}
         <div
           className="
-            mt-6
+            mt-5
             flex
             flex-wrap
             items-center
-            gap-4
-
-            sm:mt-7
-            lg:mt-8
+            gap-3
           "
         >
           <button
             type="button"
             className="
-              shrink-0
-              rounded-[10px]
+              rounded-md
               bg-[#061632]
-              px-5
-              py-3
-              text-[10px]
-              font-semibold
+              px-3
+              py-2
+              text-[9px]
+              font-medium
               text-white
-              shadow-md
+              shadow-sm
               transition-all
-              duration-300
+              duration-200
               hover:scale-105
               hover:bg-black
-              hover:shadow-lg
               active:scale-95
 
-              sm:px-6
-              sm:py-3
-              sm:text-[11px]
-
-              lg:px-7
-              lg:py-3.5
-              lg:text-[12px]
+              sm:px-3.5
+              sm:text-[10px]
             "
           >
             Explore Homes
@@ -206,32 +196,24 @@ function Hero() {
           <button
             type="button"
             className="
-              shrink-0
-              rounded-[10px]
-              border-2
+              rounded-md
+              border
               border-[#061632]
-              bg-white/70
-              px-5
-              py-3
-              text-[10px]
-              font-semibold
+              bg-white/60
+              px-3
+              py-2
+              text-[9px]
+              font-medium
               text-[#061632]
-              shadow-md
+              shadow-sm
               transition-all
-              duration-300
+              duration-200
               hover:scale-105
               hover:bg-white
-              hover:shadow-lg
               active:scale-95
-              backdrop-blur-[2px]
 
-              sm:px-6
-              sm:py-3
-              sm:text-[11px]
-
-              lg:px-7
-              lg:py-3.5
-              lg:text-[12px]
+              sm:px-3.5
+              sm:text-[10px]
             "
           >
             Book a Visit

@@ -149,7 +149,7 @@ function CTASection() {
               Ready to Find Your Dream Property?
             </h2>
 
-            <p
+            <h3
               className="
                 mt-[18px]
 
@@ -168,11 +168,12 @@ function CTASection() {
 
                 lg:mt-[22px]
                 lg:text-[14px]
+                font-p
               "
             >
               Whether you're looking to buy, rent, sell, or invest,
               we're here to help you make the right move.
-            </p>
+            </h3>
 
             <button
               type="button"
@@ -269,7 +270,7 @@ function CTASection() {
               pointer-events-none
               absolute
 
-              bottom-[-5px]
+              bottom-[-17px]
               left-1/2
 
               z-[5]
@@ -298,6 +299,7 @@ function CTASection() {
               lg:tracking-[-10px]
 
               xl:text-[175px]
+              font-goldman1
             "
           >
             UrbanVista

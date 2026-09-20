@@ -20,6 +20,7 @@ input,
 textarea,
 select {
   font-family: "Satoshi", sans-serif;
+  font-size: 16px;
 }
 
 * {
@@ -31,5 +32,26 @@ select {
   font-size: 32px;
   font-weight: 700;
   line-height: 100%;
+  letter-spacing: 0;
+}
+
+.font-goldman1{
+  font-family: "Goldman", sans-serif;
+  
+}
+.font-p{
+  
+  font-family: "Satoshi", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.font-h4{
+  font-family: "Satoshi", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
   letter-spacing: 0;
 }

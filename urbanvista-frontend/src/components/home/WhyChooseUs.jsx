@@ -34,6 +34,9 @@ function WhyChooseUs() {
     },
   ]
 
+
+  
+
   return (
     <section
       className="
@@ -132,6 +135,7 @@ function WhyChooseUs() {
               text-[#444444]
               sm:text-[14px]
               lg:text-[15px]
+              font-p
             "
           >
             Finding the right property shouldn&apos;t be complicated. We
@@ -279,7 +283,7 @@ function WhyChooseUs() {
                           tracking-[-0.7px]
                           text-white
                           sm:text-[27px]
-                          lg:text-[30px]
+                          lg:text-[31px]
                         "
                       >
                         {feature.title}
@@ -296,7 +300,7 @@ function WhyChooseUs() {
                           text-white/90
                           sm:text-[15px]
                           lg:max-w-[370px]
-                          lg:text-[16px]
+                          lg:text-[19px]
                         "
                       >
                         {feature.description}
@@ -371,7 +375,7 @@ function WhyChooseUs() {
                           tracking-[-0.4px]
                           text-[#08090d]
                           sm:text-[16px]
-                          lg:text-[17px]
+                          lg:text-[19px]
                         "
                       >
                         {feature.title}
@@ -386,7 +390,7 @@ function WhyChooseUs() {
                           tracking-[-0.05px]
                           text-[#303030]
                           sm:text-[11px]
-                          lg:text-[12px]
+                          lg:text-[15px]
                         "
                       >
                         {feature.description}

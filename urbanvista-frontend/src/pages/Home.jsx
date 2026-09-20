@@ -22,11 +22,11 @@ function Home() {
 
       <WhyChooseUs />
 
+      <StatsSection />
       <Testimonials />
 
       <FAQ />
 
-      <StatsSection />
 
       <CTASection />
 
