@@ -111,27 +111,22 @@ function Navbar() {
       </button>
 
       <div
-        className="
-          pointer-events-none
-          absolute
-          left-1/2
-          max-w-[40%]
-          -translate-x-1/2
-          truncate
-          text-center
-          font-black
-          leading-none
-          tracking-tighter
-          text-[#050505]
-          text-2xl
-          drop-shadow-sm
+  className="
+    pointer-events-none
+    absolute
+    left-1/2
+    max-w-[40%]
+    -translate-x-1/2
+    truncate
+    text-center
+    leading-none
+    text-[#050505]
+    drop-shadow-sm
+    font-goldman
 
-          sm:max-w-none
-          sm:text-3xl
-
-          lg:text-4xl
-        "
-      >
+    sm:max-w-none
+  "
+>
         UrbanVista
       </div>
 
