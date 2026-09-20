@@ -414,7 +414,7 @@ function FooterSection() {
                       font-h4
                     "
                   >
-                    @
+                    
                   </span>
 
                   <span
@@ -459,7 +459,7 @@ function FooterSection() {
                       text-[#00131e]
                     "
                   >
-                    +
+                    
                   </span>
 
                   <span
@@ -504,7 +504,7 @@ function FooterSection() {
                       text-[#00131e]
                     "
                   >
-                    ●
+                    
                   </span>
 
                   <span
