@@ -1,20 +1,26 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
 function Navbar() {
   const navigate = useNavigate();
   const { user, isAuthenticated, logout } = useAuth();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
+    setMenuOpen(false);
     navigate("/");
   };
 
   const handleLogin = () => {
+    setMenuOpen(false);
     navigate("/login");
   };
 
   const handleContact = () => {
+    setMenuOpen(false);
+
     const contactSection = document.getElementById("contact");
 
     if (contactSection) {
@@ -59,7 +65,8 @@ function Navbar() {
     >
       <button
         type="button"
-        aria-label="Open menu"
+        aria-label={menuOpen ? "Close menu" : "Open menu"}
+        onClick={() => setMenuOpen(!menuOpen)}
         className="
           flex
           h-10
@@ -85,9 +92,21 @@ function Navbar() {
         "
       >
         <span className="flex w-5 flex-col gap-1.5">
-          <span className="h-0.5 w-5 rounded-full bg-white transition-all" />
-          <span className="h-0.5 w-4 rounded-full bg-white transition-all" />
-          <span className="h-0.5 w-5 rounded-full bg-white transition-all" />
+          <span
+            className={`h-0.5 w-5 rounded-full bg-white transition-all duration-300 ${
+              menuOpen ? "translate-y-2 rotate-45" : ""
+            }`}
+          />
+          <span
+            className={`h-0.5 w-4 rounded-full bg-white transition-all duration-300 ${
+              menuOpen ? "opacity-0" : ""
+            }`}
+          />
+          <span
+            className={`h-0.5 w-5 rounded-full bg-white transition-all duration-300 ${
+              menuOpen ? "-translate-y-2 -rotate-45" : ""
+            }`}
+          />
         </span>
       </button>
 
@@ -117,111 +136,47 @@ function Navbar() {
       </div>
 
       <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-        <button
-          type="button"
-          onClick={handleContact}
-          className="
-            shrink-0
-            whitespace-nowrap
-            rounded-[10px]
-            bg-[#061632]
-            px-5
-            py-2.5
-            text-[11px]
-            font-bold
-            text-white
-            transition-all
-            duration-200
-            hover:scale-105
-            hover:bg-[#0b2847]
-            hover:shadow-lg
-            active:scale-95
-            shadow-md
-
-            sm:px-6
-            sm:py-3
-            sm:text-[12px]
-
-            lg:px-7
-            lg:py-3
-            lg:text-[13px]
-            lg:font-semibold
-          "
-        >
-          Contact us
-        </button>
-
-        {!isAuthenticated ? (
+        <div className="hidden items-center gap-2 sm:flex sm:gap-3">
           <button
             type="button"
-            onClick={handleLogin}
-            aria-label="Login"
-            title="Login"
+            onClick={handleContact}
             className="
-              flex
-              h-10
-              w-10
               shrink-0
-              items-center
-              justify-center
+              whitespace-nowrap
               rounded-[10px]
               bg-[#061632]
+              px-5
+              py-2.5
+              text-[11px]
+              font-bold
               text-white
               transition-all
               duration-200
-              hover:scale-110
+              hover:scale-105
               hover:bg-[#0b2847]
               hover:shadow-lg
               active:scale-95
+              shadow-md
 
-              sm:h-11
-              sm:w-11
+              sm:px-6
+              sm:py-3
+              sm:text-[12px]
 
-              lg:h-12
-              lg:w-12
+              lg:px-7
+              lg:py-3
+              lg:text-[13px]
+              lg:font-semibold
             "
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-5 w-5 sm:h-5 sm:w-5 lg:h-6 lg:w-6"
-            >
-              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
-              <polyline points="10 17 15 12 10 7" />
-              <line x1="15" y1="12" x2="3" y2="12" />
-            </svg>
+            Contact us
           </button>
-        ) : (
-          <>
-            <div
-              className="
-                hidden
-                max-w-[180px]
-                truncate
-                text-right
-                text-sm
-                font-semibold
-                text-[#061632]
 
-                sm:block
-                lg:max-w-[240px]
-                lg:text-base
-              "
-              title={`Welcome, ${user?.name || "User"}`}
-            >
-              Welcome, {user?.name || "User"}
-            </div>
-
+          {!isAuthenticated ? (
             <button
               type="button"
-              onClick={handleLogout}
-              aria-label="Logout"
-              title="Logout"
+              onClick={handleLogin}
+              aria-label="Login"
+              title="Login"
               className="
                 flex
                 h-10
@@ -251,17 +206,236 @@ function Navbar() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2"
+                strokeWidth="2.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="h-5 w-5 sm:h-5 sm:w-5 lg:h-6 lg:w-6"
+                className="h-6 w-6 sm:h-6 sm:w-6 lg:h-7 lg:w-7"
               >
-                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-                <polyline points="16 17 21 12 16 7" />
-                <line x1="21" y1="12" x2="9" y2="12" />
+                <path d="M13 4h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6" />
+                <path d="M3 12h11" />
+                <path d="m10 8 4 4-4 4" />
               </svg>
             </button>
-          </>
+          ) : (
+            <>
+              <div
+                className="
+                  max-w-[180px]
+                  truncate
+                  text-right
+                  text-sm
+                  font-semibold
+                  text-[#061632]
+
+                  lg:max-w-[240px]
+                  lg:text-base
+                "
+                title={`Welcome, ${user?.name || "User"}`}
+              >
+                Welcome, {user?.name || "User"}
+              </div>
+
+              <button
+                type="button"
+                onClick={handleLogout}
+                aria-label="Logout"
+                title="Logout"
+                className="
+                  flex
+                  h-10
+                  w-10
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-[10px]
+                  bg-[#061632]
+                  text-white
+                  transition-all
+                  duration-200
+                  hover:scale-110
+                  hover:bg-[#0b2847]
+                  hover:shadow-lg
+                  active:scale-95
+
+                  sm:h-11
+                  sm:w-11
+
+                  lg:h-12
+                  lg:w-12
+                "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-6 w-6 sm:h-6 sm:w-6 lg:h-7 lg:w-7"
+                >
+                  <path d="M11 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6" />
+                  <path d="M21 12H10" />
+                  <path d="m17 8 4 4-4 4" />
+                </svg>
+              </button>
+            </>
+          )}
+        </div>
+
+        <div className="sm:hidden">
+          <button
+            type="button"
+            onClick={handleContact}
+            className="
+              shrink-0
+              whitespace-nowrap
+              rounded-[10px]
+              bg-[#061632]
+              px-4
+              py-2.5
+              text-[11px]
+              font-bold
+              text-white
+              transition-all
+              duration-200
+              hover:scale-105
+              hover:bg-[#0b2847]
+              hover:shadow-lg
+              active:scale-95
+              shadow-md
+            "
+          >
+            Contact us
+          </button>
+        </div>
+      </div>
+
+      <div
+        className={`
+          absolute
+          left-0
+          top-[calc(100%+10px)]
+          w-full
+          rounded-[16px]
+          border-2
+          border-white/40
+          bg-white/90
+          p-3
+          shadow-xl
+          backdrop-blur-xl
+          transition-all
+          duration-300
+          sm:hidden
+          ${
+            menuOpen
+              ? "visible translate-y-0 opacity-100"
+              : "invisible -translate-y-2 opacity-0"
+          }
+        `}
+      >
+        {isAuthenticated && (
+          <div
+            className="
+              mb-2
+              flex
+              items-center
+              justify-between
+              rounded-[12px]
+              bg-white
+              px-4
+              py-3
+              text-sm
+              font-semibold
+              text-[#061632]
+              shadow-sm
+            "
+          >
+            <span className="truncate">
+              Welcome, {user?.name || "User"}
+            </span>
+
+            <button
+              type="button"
+              onClick={handleLogout}
+              aria-label="Logout"
+              title="Logout"
+              className="
+                ml-3
+                flex
+                h-9
+                w-9
+                shrink-0
+                items-center
+                justify-center
+                rounded-[9px]
+                bg-[#061632]
+                text-white
+                transition-all
+                duration-200
+                hover:scale-105
+                hover:bg-[#0b2847]
+                active:scale-95
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-5 w-5"
+              >
+                <path d="M11 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6" />
+                <path d="M21 12H10" />
+                <path d="m17 8 4 4-4 4" />
+              </svg>
+            </button>
+          </div>
+        )}
+
+        {!isAuthenticated && (
+          <button
+            type="button"
+            onClick={handleLogin}
+            className="
+              flex
+              w-full
+              items-center
+              justify-between
+              rounded-[12px]
+              bg-white
+              px-4
+              py-3
+              text-sm
+              font-semibold
+              text-[#061632]
+              shadow-sm
+              transition-all
+              duration-200
+              hover:bg-gray-50
+              active:scale-[0.98]
+            "
+          >
+            <span>Login</span>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-5 w-5"
+            >
+              <path d="M13 4h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6" />
+              <path d="M3 12h11" />
+              <path d="m10 8 4 4-4 4" />
+            </svg>
+          </button>
         )}
       </div>
     </nav>
