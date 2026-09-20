@@ -36,11 +36,6 @@ function FeaturedProperties() {
         lg:pb-[0px]
       "
     >
-      {/* =====================================================
-          MAIN CONTENT
-          SAME WIDTH SYSTEM AS EVERY OTHER SECTION
-      ====================================================== */}
-
       <div
         className="
           mx-auto
@@ -50,12 +45,6 @@ function FeaturedProperties() {
           lg:w-[86%]
         "
       >
-
-        {/* =====================================================
-            TOP ROW
-            LABEL + BUTTON
-        ====================================================== */}
-
         <div
           className="
             flex
@@ -66,8 +55,6 @@ function FeaturedProperties() {
             gap-y-3
           "
         >
-          {/* LABEL */}
-
           <div className="flex items-center gap-[10px]">
             <span
               className="
@@ -93,12 +80,9 @@ function FeaturedProperties() {
                 sm:text-[13px]
               "
             >
-              
               <span className="text-[24px]">Featured Properties</span>
             </p>
           </div>
-
-          {/* VIEW ALL */}
 
           <button
             type="button"
@@ -147,10 +131,6 @@ function FeaturedProperties() {
           </button>
         </div>
 
-        {/* =====================================================
-            HEADING + DESCRIPTION
-        ====================================================== */}
-
         <div
           className="
             mt-[32px]
@@ -163,8 +143,6 @@ function FeaturedProperties() {
             lg:gap-[80px]
           "
         >
-          {/* LEFT HEADING */}
-
           <div>
             <h2
               className="
@@ -185,8 +163,6 @@ function FeaturedProperties() {
             </h2>
           </div>
 
-          {/* RIGHT DESCRIPTION */}
-
           <div className="flex lg:justify-end">
             <p
               className="
@@ -206,20 +182,21 @@ function FeaturedProperties() {
           </div>
         </div>
 
-        {/* =====================================================
-            PROPERTY IMAGE AREA
-        ====================================================== */}
-
         <div
           className="
             mt-[40px]
             flex
-            w-full
+            w-[calc(100%+116px)]
+            -translate-x-[58px]
             flex-col
             gap-[16px]
             sm:mt-[50px]
+            sm:w-[calc(100%+116px)]
+            sm:-translate-x-[58px]
             sm:gap-[20px]
             lg:mt-[62px]
+            lg:w-[calc(100%+116px)]
+            lg:-translate-x-[58px]
           "
         >
           {properties.map((property, index) => (
@@ -227,42 +204,33 @@ function FeaturedProperties() {
               key={`${property.title}-${index}`}
               className="
                 relative
+                mx-auto
                 w-full
                 overflow-hidden
                 rounded-[2px]
                 bg-[#e9ecef]
               "
             >
-              {/* =================================================
-                  IMAGE
-
-                  Explicit heights (instead of h-auto + min-h) so
-                  every card is the same size regardless of the
-                  source image's own aspect ratio.
-
-                  STATIC:
-                  NO HOVER
-                  NO SCALE
-                  NO TRANSITION
-              ================================================== */}
-
-              <img
-                src={property.image}
-                alt={property.title}
-                className="
-                  block
-                  h-[240px]
-                  w-full
-                  object-cover
-                  sm:h-[350px]
-                  lg:h-[480px]
-                  xl:h-[560px]
-                "
-              />
-
-              {/* =================================================
-                  VERY LIGHT OVERLAY
-              ================================================== */}
+             <img
+  src={property.image}
+  alt={property.title}
+  className="
+    block
+    h-[calc(55vw+120px)]
+    min-h-[360px]
+    max-h-[680px]
+    w-full
+    object-cover
+    sm:h-[calc(52vw+120px)]
+    sm:min-h-[420px]
+    sm:max-h-[620px]
+    lg:h-[calc(38vw+120px)]
+    lg:min-h-[540px]
+    lg:max-h-[680px]
+    xl:h-[calc(36vw+120px)]
+    xl:max-h-[720px]
+  "
+/>
 
               <div
                 className="
@@ -272,12 +240,6 @@ function FeaturedProperties() {
                   bg-black/[0.02]
                 "
               />
-
-              {/* =================================================
-                  CENTER INFORMATION CARD
-
-                  STATIC — NO HOVER
-              ================================================== */}
 
               <div
                 className="
@@ -306,8 +268,6 @@ function FeaturedProperties() {
                     sm:py-[20px]
                   "
                 >
-                  {/* TITLE */}
-
                   <h3
                     className="
                       text-[15px]
@@ -321,8 +281,6 @@ function FeaturedProperties() {
                   >
                     {property.title}
                   </h3>
-
-                  {/* LOCATION */}
 
                   <p
                     className="
@@ -339,8 +297,6 @@ function FeaturedProperties() {
                     {property.location}
                   </p>
 
-                  {/* PRICE */}
-
                   <p
                     className="
                       mt-[12px]
@@ -354,8 +310,6 @@ function FeaturedProperties() {
                   >
                     {property.price}
                   </p>
-
-                  {/* EXPLORE */}
 
                   <div
                     className="
@@ -400,7 +354,6 @@ function FeaturedProperties() {
             </article>
           ))}
         </div>
-
       </div>
     </section>
   )

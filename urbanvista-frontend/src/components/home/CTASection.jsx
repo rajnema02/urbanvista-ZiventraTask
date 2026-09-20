@@ -27,7 +27,7 @@ function CTASection() {
             }
 
             35% {
-              transform: scale(1.14);
+              transform: scale(2.14);
             }
 
             65% {
@@ -40,7 +40,7 @@ function CTASection() {
           }
 
           .cta-image-zoom {
-            animation: ctaImageZoom 4.5s ease-in-out infinite;
+            animation: ctaImageZoom 2s ease-in-out infinite;
             transform-origin: center center;
             will-change: transform;
           }
