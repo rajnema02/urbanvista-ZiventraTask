@@ -3,7 +3,7 @@ import { useAuth } from "../../context/AuthContext";
 
 function Navbar() {
   const navigate = useNavigate();
-  const { isAuthenticated, logout } = useAuth();
+  const { user, isAuthenticated, logout } = useAuth();
 
   const handleLogout = () => {
     logout();
@@ -155,70 +155,113 @@ function Navbar() {
           <button
             type="button"
             onClick={handleLogin}
+            aria-label="Login"
+            title="Login"
             className="
+              flex
+              h-10
+              w-10
               shrink-0
-              whitespace-nowrap
+              items-center
+              justify-center
               rounded-[10px]
               bg-[#061632]
-              px-5
-              py-2.5
-              text-[11px]
-              font-bold
               text-white
               transition-all
               duration-200
-              hover:scale-105
+              hover:scale-110
               hover:bg-[#0b2847]
               hover:shadow-lg
               active:scale-95
-              shadow-md
 
-              sm:px-6
-              sm:py-3
-              sm:text-[12px]
+              sm:h-11
+              sm:w-11
 
-              lg:px-7
-              lg:py-3
-              lg:text-[13px]
-              lg:font-semibold
+              lg:h-12
+              lg:w-12
             "
           >
-            Login
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-5 w-5 sm:h-5 sm:w-5 lg:h-6 lg:w-6"
+            >
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+              <polyline points="10 17 15 12 10 7" />
+              <line x1="15" y1="12" x2="3" y2="12" />
+            </svg>
           </button>
         ) : (
-          <button
-            type="button"
-            onClick={handleLogout}
-            className="
-              shrink-0
-              whitespace-nowrap
-              rounded-[10px]
-              bg-[#061632]
-              px-5
-              py-2.5
-              text-[11px]
-              font-bold
-              text-white
-              transition-all
-              duration-200
-              hover:scale-105
-              hover:bg-[#0b2847]
-              hover:shadow-lg
-              active:scale-95
-              shadow-md
+          <>
+            <div
+              className="
+                hidden
+                max-w-[180px]
+                truncate
+                text-right
+                text-sm
+                font-semibold
+                text-[#061632]
 
-              sm:px-6
-              sm:py-3
-              sm:text-[12px]
+                sm:block
+                lg:max-w-[240px]
+                lg:text-base
+              "
+              title={`Welcome, ${user?.name || "User"}`}
+            >
+              Welcome, {user?.name || "User"}
+            </div>
 
-              lg:px-7
-              lg:py-3
-              lg:text-[13px]
-              lg:font-semibold
-            "
-          >
-            Logout
-          </button>
+            <button
+              type="button"
+              onClick={handleLogout}
+              aria-label="Logout"
+              title="Logout"
+              className="
+                flex
+                h-10
+                w-10
+                shrink-0
+                items-center
+                justify-center
+                rounded-[10px]
+                bg-[#061632]
+                text-white
+                transition-all
+                duration-200
+                hover:scale-110
+                hover:bg-[#0b2847]
+                hover:shadow-lg
+                active:scale-95
+
+                sm:h-11
+                sm:w-11
+
+                lg:h-12
+                lg:w-12
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-5 w-5 sm:h-5 sm:w-5 lg:h-6 lg:w-6"
+              >
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <polyline points="16 17 21 12 16 7" />
+                <line x1="21" y1="12" x2="9" y2="12" />
+              </svg>
+            </button>
+          </>
         )}
       </div>
     </nav>
