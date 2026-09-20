@@ -137,6 +137,25 @@ function Navbar() {
 
       <div className="flex shrink-0 items-center gap-2 sm:gap-3">
         <div className="hidden items-center gap-2 sm:flex sm:gap-3">
+          {isAuthenticated && (
+            <div
+              className="
+                max-w-[180px]
+                truncate
+                text-right
+                text-sm
+                font-semibold
+                text-[#061632]
+
+                lg:max-w-[240px]
+                lg:text-base
+              "
+              title={`Welcome, ${user?.name || "User"}`}
+            >
+              Welcome, {user?.name || "User"}
+            </div>
+          )}
+
           <button
             type="button"
             onClick={handleContact}
@@ -217,69 +236,50 @@ function Navbar() {
               </svg>
             </button>
           ) : (
-            <>
-              <div
-                className="
-                  max-w-[180px]
-                  truncate
-                  text-right
-                  text-sm
-                  font-semibold
-                  text-[#061632]
+            <button
+              type="button"
+              onClick={handleLogout}
+              aria-label="Logout"
+              title="Logout"
+              className="
+                flex
+                h-10
+                w-10
+                shrink-0
+                items-center
+                justify-center
+                rounded-[10px]
+                bg-[#061632]
+                text-white
+                transition-all
+                duration-200
+                hover:scale-110
+                hover:bg-[#0b2847]
+                hover:shadow-lg
+                active:scale-95
 
-                  lg:max-w-[240px]
-                  lg:text-base
-                "
-                title={`Welcome, ${user?.name || "User"}`}
+                sm:h-11
+                sm:w-11
+
+                lg:h-12
+                lg:w-12
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-6 w-6 sm:h-6 sm:w-6 lg:h-7 lg:w-7"
               >
-                Welcome, {user?.name || "User"}
-              </div>
-
-              <button
-                type="button"
-                onClick={handleLogout}
-                aria-label="Logout"
-                title="Logout"
-                className="
-                  flex
-                  h-10
-                  w-10
-                  shrink-0
-                  items-center
-                  justify-center
-                  rounded-[10px]
-                  bg-[#061632]
-                  text-white
-                  transition-all
-                  duration-200
-                  hover:scale-110
-                  hover:bg-[#0b2847]
-                  hover:shadow-lg
-                  active:scale-95
-
-                  sm:h-11
-                  sm:w-11
-
-                  lg:h-12
-                  lg:w-12
-                "
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-6 w-6 sm:h-6 sm:w-6 lg:h-7 lg:w-7"
-                >
-                  <path d="M11 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6" />
-                  <path d="M21 12H10" />
-                  <path d="m17 8 4 4-4 4" />
-                </svg>
-              </button>
-            </>
+                <path d="M11 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6" />
+                <path d="M21 12H10" />
+                <path d="m17 8 4 4-4 4" />
+              </svg>
+            </button>
           )}
         </div>
 
